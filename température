@@ -1,0 +1,10 @@
+from pyb import Pin, ADC, Timer #timer pour créer des horloges
+import time #pour le time.sleep
+
+tmp36=pyb.ADC('X1')
+
+while True:
+    valcapt=tmp36.read()
+    temp=((valcapt/4096)*330)-50
+    print(temp)
+    time.sleep(0.1)
